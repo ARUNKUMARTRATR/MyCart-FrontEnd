@@ -1,0 +1,20 @@
+<div *ngIf="isLoaded">
+<div class="card">
+  <button (click)="signInWithGoogle()">
+    <img src="assets/google.svg" alt="google" width="30" height="30" />
+    <span><b>Sign in with Google</b></span>
+  </button>
+</div>
+</div>
+<!--  -->
+<ngx-spinner
+  bdOpacity="0"
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#ec8d3e"
+  type="ball-fall"
+  [fullScreen]="true"
+>
+<p style="color: white">Signing Into My Cart</p>
+
+</ngx-spinner>

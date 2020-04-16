@@ -1,0 +1,18 @@
+<div class="flexbox">
+  <div class="ldiv">
+    <div class="sign">
+      <span style="cursor: pointer;"><span class="fast-flicker">M</span>Y<span class="veryfast">*</span>C<span
+          class="flicker">A</span>R<span class="fast-flicker">T</span></span>
+    </div>
+  </div>
+  <button class="btn bt" type="submit" (click)="addNew()">Add New Product</button>
+  <button class="btn bt cart" type="submit" *ngIf='!cartcountcheck' (click)="toCart()">Cart</button>
+  <button class="btn bt cart" type="submit" *ngIf='cartcountcheck' (click)="toCart()">Cart({{cartCount}})</button>
+  <button dropdownToggle type="button" class="btn bt" (click)="showSpinner('log')">Logout</button>
+
+</div>
+
+<ngx-spinner name="log" bdOpacity="1" bdColor="#333" size="medium" color="#f4770e" type="line-scale-pulse-out"
+  [fullScreen]="true">
+  <span style="color: white;font-size:25px">See U Again!</span>
+</ngx-spinner>

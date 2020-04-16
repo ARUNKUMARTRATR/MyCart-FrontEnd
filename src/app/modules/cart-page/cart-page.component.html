@@ -1,0 +1,26 @@
+<div class="main" *ngFor = 'let product of cartData'>
+  <h3>{{product.productName}}</h3>
+  <p><b>Model:</b> {{product.productId}}</p><br>
+  <p><b>Launch Date:</b> {{product.launchDate}}</p>
+  <div class="des">
+    <b>Description :</b><br><label><span>Lorem, ipsum dolor sit amet 
+      consectetur adipisicing elit. 
+      Aspernatur in neque quis perferendis beatae repellat ea 
+      consequatur cupiditate officia culpa? 
+      Velit dolore laboriosam debitis numquam 
+      praesentium odio sint architecto sed.
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Aspernatur in neque quis perferendis beatae repellat ea consequatur 
+      cupiditate officia culpa? Velit dolore laboriosam debitis numquam 
+      praesentium odio sint architecto sed.</span></label>
+  </div>
+  <div style="display: flex;">
+    <img src="{{product.photoUrl}}" alt="cardimg"><br>
+ 
+    <div class="vl"></div>
+  </div>
+  <div style="display: flex;margin-left: 50vw;">
+  <button class="btn btn-primary" >Buy Now</button>
+  <button class="btn btn-primary" style="margin-left: 50%;">Remove From Cart</button>
+</div>
+</div>

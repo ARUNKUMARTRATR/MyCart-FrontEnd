@@ -1,0 +1,49 @@
+.main {
+  background-color: white;
+  margin: 3% 5% 1% 5%;
+  border-radius: 10px;
+  height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(18, 3, 36, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main:hover {
+  box-shadow: 0px 18px 12px 0px rgba(10, 169, 243, 0.2);
+}
+img {
+  position: absolute;
+  margin-left: 12%;
+  padding: 4%;
+}
+button {
+  border: none;
+  color: black;
+  background-color: rgb(174, 236, 59);
+  display: flex;
+}
+h3 {
+  display: flex;
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 15%;
+  padding: 10px;
+}
+p {
+  position: absolute;
+  margin-left: 15%;
+  margin-top: 24%;
+  padding: 10px;
+}
+.des {
+  position: absolute;
+  margin-left: 50%;
+  padding: 2%;
+  width: 600px;
+}
+  ///////////////////////////////////////////////////////////////////////////////////////
+  .vl {
+      margin-left: 50%;
+      margin-top: 30px;
+      border-left: 6px solid green;
+      height: 350px;
+    }

@@ -1,0 +1,46 @@
+<div class="padd">
+    <form [formGroup]="profileForm">
+        <div class="form-row">
+            <div class="col">
+                <label>Product Name</label>
+                <input type="text" class="form-control" formControlName="PName">
+            </div>
+            <div class="col">
+                <label>Product Id</label>
+                <input type="text" class="form-control" formControlName="PId">
+            </div>
+        </div>
+        <div class="form-row">
+            <label>Photo Url</label>
+            <input type="text" class="form-control" formControlName="PUrl">
+        </div>
+        <div class="form-row">
+            <label>Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="Des"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Price</label>
+                <input type="number" class="form-control" formControlName="Price">
+            </div>
+            <div class="col-md-4">
+                <label>Launch Date</label>
+                <input #data class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker formControlName="LDate"
+                    [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true, adaptivePosition: true  }">
+            </div>
+            <div class="col">
+                <label>Catogory</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option *ngFor='let cat of catData'>{{cat.categoryName}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row" style="margin-left: 18px;">
+            <input class="form-check-input" type="checkbox" formControlName="IsAvailable">
+            <label>Is Available</label>
+
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid" (click)="addProduct(data)">Add
+            Product</button>
+    </form>
+</div>

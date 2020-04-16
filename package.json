@@ -1,5 +1,5 @@
 {
-  "name": "try",
+  "name": "MyCart",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,6 +19,11 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "angularx-social-login": "^2.2.1",
+    "ngx-spinner": "^9.0.1",
+    "bootstrap": "^4.3.1",
+    "ngx-bootstrap": "^5.5.0",
+    "bootstrap-select": "^1.13.12",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

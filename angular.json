@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TRY": {
+    "MyCart": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TRY",
+            "outputPath": "dist/MyCart",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
             "scripts": []
           },
@@ -63,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TRY:build"
+            "browserTarget": "MyCart:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TRY:build:production"
+              "browserTarget": "MyCart:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TRY:build"
+            "browserTarget": "MyCart:build"
           }
         },
         "test": {
@@ -111,15 +113,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "TRY:serve"
+            "devServerTarget": "MyCart:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "TRY:serve:production"
+              "devServerTarget": "MyCart:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "TRY"
+  "defaultProject": "MyCart"
 }
