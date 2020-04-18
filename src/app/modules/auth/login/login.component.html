@@ -1,20 +1,21 @@
-<div *ngIf="isLoaded">
-<div class="card">
-  <button (click)="signInWithGoogle()">
-    <img src="assets/google.svg" alt="google" width="30" height="30" />
-    <span><b>Sign in with Google</b></span>
-  </button>
+<div class="bod" *ngIf="isLoaded">
+
+ 
+
+  <div class="card">
+    <div class="sign">
+      <span routerLink="/mycart/dashboard" style="cursor: pointer;"><span class="fast-flicker">M</span>Y<span
+          class="veryfast">*</span>C<span class="flicker">A</span>R<span class="fast-flicker">T</span></span>
+    </div>
+    <button (click)="signInWithGoogle()">
+      <img src="assets/google.svg" alt="google" width="30" height="30" />
+      <span>Sign in with Google</span>
+    </button>
+  </div>
 </div>
-</div>
-<!--  -->
-<ngx-spinner
-  bdOpacity="0"
-  bdColor="rgba(0, 0, 0, 0.8)"
-  size="medium"
-  color="#ec8d3e"
-  type="ball-fall"
-  [fullScreen]="true"
->
-<p style="color: white">Signing Into My Cart</p>
+
+<ngx-spinner bdOpacity="0" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ec8d3e" type="ball-fall"
+  [fullScreen]="true">
+  <p style="color: white">Signing Into My Cart</p>
 
 </ngx-spinner>
