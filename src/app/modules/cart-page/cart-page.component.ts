@@ -8,39 +8,30 @@ import { ApiService } from 'src/app/core';
   styleUrls: ['./cart-page.component.scss']
 })
 export class CartPageComponent implements OnInit {
-cartData: Array<ProductModel>;
+  cartData: Array<ProductModel>;
+  productCart: {
+    UserId: number,
+    CartProductId: string,
+  };
   constructor(private dataApiService: ApiService) { }
+  removeFromCart(item) {
+    this.productCart = {
+      UserId: +sessionStorage.getItem('userId'),
+      CartProductId: item.productId
+    };
+    this.dataApiService.post('api/ProductCarts', this.productCart, {}).subscribe(result => {
+      const filtered = this.cartData.filter(data => data.productId !== item.productId);
+      this.cartData = filtered;
+    });
 
+  }
   ngOnInit() {
-    // tslint:disable-next-line:no-unused-expression
-    this.cartData = [{
-      id: 1,
-      productId: 'mobile1',
-      productName: 'OnePlus 7 Pro',
-      description: 'Best mobiles under 10000',
-      price: 44000,
-      launchDate: '2020-04-01',
-      photoUrl: 'assets/1.jpg',
-      isAvailable: true,
-      isDeleted: false,
-      catogoryName: null,
-      catogory: null,
-      productCart: null
-    },
-    {
-      id: 1,
-      productId: 'mobile1',
-      productName: 'OnePlus 7T Pro',
-      description: 'Best mobiles under 10000',
-      price: 44000,
-      launchDate: '2020-04-01',
-      photoUrl: 'assets/2.jpg',
-      isAvailable: true,
-      isDeleted: false,
-      catogoryName: null,
-      catogory: null,
-      productCart: null
-    }];
+    const uId = sessionStorage.getItem('userId');
+    this.dataApiService.get('api/ProductCarts/' + uId, {}).subscribe(result => {
+      this.cartData = result;
+      console.log(result);
+    });
+
   }
 
 }

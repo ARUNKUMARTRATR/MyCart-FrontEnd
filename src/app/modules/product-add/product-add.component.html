@@ -16,7 +16,7 @@
         </div>
         <div class="form-row">
             <label>Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="Des"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="Des" maxlength="200"></textarea>
         </div>
         <div class="form-row">
             <div class="col-md-4">
@@ -30,8 +30,9 @@
             </div>
             <div class="col">
                 <label>Catogory</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option *ngFor='let cat of catData'>{{cat.categoryName}}</option>
+                <select class="selector" class="form-control" id="Select" formControlName="Cat">
+                    <option></option>
+                    <option *ngFor='let cat of catData'>{{cat.catogories}}</option>
                 </select>
             </div>
         </div>

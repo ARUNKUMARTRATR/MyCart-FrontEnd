@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/core';
 })
 export class ProductAddComponent implements OnInit {
   productAdd: ProductModel;
-catData: any;
+  catData: any;
   profileForm = new FormGroup({
     PName: new FormControl('', [Validators.required]),
     PId: new FormControl('', [Validators.required]),
@@ -19,7 +19,7 @@ catData: any;
     Des: new FormControl('', [Validators.required]),
     Price: new FormControl('', [Validators.required]),
     LDate: new FormControl('', [Validators.required]),
-    Category: new FormControl('', [Validators.required]),
+    Cat: new FormControl('', [Validators.required]),
     IsAvailable: new FormControl('', [Validators.required]),
   });
 
@@ -27,24 +27,33 @@ catData: any;
   }
 
   addProduct(data) {
+
     const temp = this.profileForm.value;
-    this.productAdd = {
-      productName: temp.PName,
-      productId: temp.PId,
-      photoUrl: temp.PUrl,
-      description: temp.Des,
-      price: +temp.Price,
-      launchDate: data.value,
-      catogoryName: temp.Category,
-      isAvailable: temp.IsAvailable,
-      isDeleted: false,
-      id: 0,
-      catogory: null,
-      productCart: null
-    };
-    confirm('Are You Sure');
-    this.dataApiService.post('api/Products', this.productAdd, {}).subscribe(res => this.nav.navigateByUrl('mycart/dashboard'));
+    if (temp.Cat != null) {
+      this.productAdd = {
+        productName: temp.PName,
+        productId: temp.PId,
+        photoUrl: temp.PUrl,
+        description: temp.Des,
+        price: +temp.Price,
+        launchDate: data.value,
+        catogoryName: temp.Cat,
+        isAvailable: temp.IsAvailable,
+        isDeleted: false,
+        id: 0,
+        catogory: null,
+        productCart: null
+      };
+      confirm('Are You Sure');
+      // tslint:disable-next-line:max-line-length
+      this.dataApiService.post('api/Products', this.productAdd, {}).subscribe(res => this.nav.navigateByUrl('mycart/dashboard'), err => alert('product already added'));
+    } else {
+       alert('Please Fill All Inputs');
+    }
   }
-  ngOnInit() { }
+
+  ngOnInit() {
+    this.dataApiService.get('api/Catogories', {}).subscribe(res => this.catData = res);
+  }
 
 }

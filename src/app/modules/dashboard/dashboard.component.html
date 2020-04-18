@@ -6,7 +6,7 @@
       <p class="card-text">Launch Date: {{product.launchDate}}</p>
       <p class="card-text">{{product.description}}</p>
       <div style="display: flex;">
-        <a><button class="btn btn-primary" [disabled]="!product.isAvailable">Add To
+        <a><button class="btn btn-primary" [disabled]="!product.isAvailable" (click)="addToCart(product)">Add To
             Cart</button></a>
         <a><button class="btn btn-primary" [disabled]="!product.isAvailable"(click)="removeProduct(product.productId)">Remove</button></a>
         <button class="btn btn-primary" (click)="editProduct(product)">Edit</button>
@@ -16,7 +16,7 @@
 </div>
 
 <ngx-spinner bdOpacity="0.1" bdColor="black" size="small" color="" [fullScreen]="true">
-  <span style="font-size:15px"><span class="sign"><span style="cursor: pointer;"><span
+  <span style="font-size:15px"><span class="sign"><span><span
           class="fast-flicker">M</span>Y<span class="veryfast">*</span>C<span class="flicker">A</span>R<span
           class="fast-flicker">T</span></span>
     </span></span>

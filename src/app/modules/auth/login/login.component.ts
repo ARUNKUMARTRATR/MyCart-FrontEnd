@@ -17,21 +17,22 @@ export class LoginComponent implements OnInit {
     private googleAuthService: AuthService,
     private router: Router,
     private spinner: NgxSpinnerService,
-    private dataService: ApiService
+    private dataApiService: ApiService
   ) { }
 
   signInWithGoogle(): void {
     this.spinner.show();
     this.googleAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(result => {
 
-      this.dataService.post('api/Login', {
+      this.dataApiService.post('api/Login', {
         email: result.email,
         fName: result.firstName,
         lName: result.lastName,
         fullName: result.name,
         photoUrl: result.photoUrl
       }, {}).subscribe(res => {
-        console.log(res);
+        console.log(res.uId);
+        sessionStorage.setItem('userId', res.uId);
         this.router.navigateByUrl('mycart/dashboard');
       });
       this.spinner.hide();
@@ -43,9 +44,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.isLoaded = false;
-    this.googleAuthService.authState.subscribe(user => {
-      this.isLoaded = true;
-    }, err => { this.router.navigateByUrl('not-found'); });
+    this.googleAuthService.authState.subscribe(user =>
+      this.isLoaded = true
+    , err => this.router.navigateByUrl('not-found'));
   }
 
 }

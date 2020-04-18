@@ -5,7 +5,6 @@ import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { RequestOptions } from '../models';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 

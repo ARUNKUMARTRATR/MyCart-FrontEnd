@@ -23,6 +23,7 @@ showSpinner(name: string) {
   setTimeout(() => {
     this.spinner.hide(name);
     this.authService.signOut();
+    sessionStorage.clear();
     this.nav.navigateByUrl('');
   }, 1000);
 }
