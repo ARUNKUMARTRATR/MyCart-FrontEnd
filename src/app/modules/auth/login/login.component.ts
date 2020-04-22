@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
         fullName: result.name,
         photoUrl: result.photoUrl
       }, {}).subscribe(res => {
-        console.log(res.uId);
+        console.log(res);
         sessionStorage.setItem('userId', res.uId);
+        sessionStorage.setItem('fullName', res.fullName);
+
         this.router.navigateByUrl('mycart/dashboard');
       });
       this.spinner.hide();

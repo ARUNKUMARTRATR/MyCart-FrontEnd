@@ -1,9 +1,11 @@
+<div class="bod">
 <div class="main">
   <div class="card" *ngFor="let product of products">
     <img src="{{product.photoUrl}}" class="card-img-top" alt="cardimg">
     <div class="card-body">
       <h5 class="card-title">{{product.productName}}</h5>
       <p class="card-text">Launch Date: {{product.launchDate}}</p>
+      <p class="card-text">RS: {{product.price}}</p>
       <p class="card-text">{{product.description}}</p>
       <div style="display: flex;">
         <a><button class="btn btn-primary" [disabled]="!product.isAvailable" (click)="addToCart(product)">Add To
@@ -14,7 +16,7 @@
     </div>
   </div>
 </div>
-
+</div>
 <ngx-spinner bdOpacity="0.1" bdColor="black" size="small" color="" [fullScreen]="true">
   <span style="font-size:15px"><span class="sign"><span><span
           class="fast-flicker">M</span>Y<span class="veryfast">*</span>C<span class="flicker">A</span>R<span

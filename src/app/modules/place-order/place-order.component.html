@@ -1,0 +1,50 @@
+<div class="bod">
+    <div *ngIf="orderCheck" class="placed">Your Order Placed !</div>
+    <div *ngIf="!orderCheck" class="padd">
+        <form [formGroup]="profileForm">
+            <div class="form-row">
+                <div class="col">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" formControlName="FName">
+                </div>
+                <div class="col">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" formControlName="LName">
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Address 1</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="Add1" maxlength="150"></textarea>
+            </div>
+            <div class="form-row">
+                <label>Address 2</label>
+                <textarea placeholder="(optional)" class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="Add2" maxlength="150"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3">
+                    <label>Mobile Number</label>
+                <input type="text" class="form-control" formControlName="Num">
+                </div>
+                <div class="col-md-3">
+                    <label>State</label>
+                    <input type="text" class="form-control" formControlName="State">
+                </div>
+                <div class="col-md-3">
+                    <label>Date Of Birth</label>
+                    <input #data class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker formControlName="Dob"
+                        [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', isAnimated: true, adaptivePosition: true  }">
+                </div>
+                <div class="col-md-3">
+                    <label>Zip Code</label>
+                    <input type="number" class="form-control" formControlName="Zip">
+                </div>
+            </div>
+            <div class="form-row" style="margin-left: 18px;">
+                <input class="form-check-input" type="checkbox" formControlName="Terms">
+                <label>Accept Terms & Conditions</label>
+    
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid" (click)="placeOrder(data.value)">Place Order !</button>
+        </form>
+    </div>
+    </div>

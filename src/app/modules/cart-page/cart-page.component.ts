@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProductModel } from './../../core/models/product.model';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core';
@@ -13,7 +14,12 @@ export class CartPageComponent implements OnInit {
     UserId: number,
     CartProductId: string,
   };
-  constructor(private dataApiService: ApiService) { }
+  constructor(private dataApiService: ApiService, private nav: Router) { }
+buyItem(product) {
+  sessionStorage.setItem('product', JSON.stringify(product));
+  this.nav.navigateByUrl('mycart/placeorder');
+}
+
   removeFromCart(item) {
     this.productCart = {
       UserId: +sessionStorage.getItem('userId'),

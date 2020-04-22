@@ -1,0 +1,28 @@
+.main {
+    background-color: white;
+    margin: 3% 5% 1% 14%;
+    border-radius: 10px;
+    height: 400px;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 greenyellow;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.bod {
+    background-image: url('/assets/gbg.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+.head {
+    font-family: "A";
+    font-size: 50px;
+    margin-left: 27vw;
+    padding-top: 21px;
+    color: whitesmoke;
+}
+button {
+    position: absolute;
+    margin-left: 55vw;
+    margin-top: -1vh;
+}

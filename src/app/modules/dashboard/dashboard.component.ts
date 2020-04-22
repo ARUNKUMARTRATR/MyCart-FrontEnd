@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   constructor(private dataApiService: ApiService, public spinner: NgxSpinnerService, private nav: Router) { }
 
   removeProduct(id: string) {
+    confirm('Are You Sure');
     this.dataApiService.delete('api/Products/' + id, {}).subscribe();
     const filtered = this.products.filter(item => item.productId !== id);
     this.products = filtered;

@@ -1,3 +1,4 @@
+<div class="bod">
 <div class="main" *ngFor = 'let product of cartData'>
   <h3>{{product.productName}}</h3>
 <div class="tex">
@@ -13,7 +14,8 @@
     <div class="vl"></div>
   </div>
   <div style="display: flex;margin-left: 50vw;">
-  <button class="btn btn-primary" >Buy Now</button>
+  <button class="btn btn-primary" (click)="buyItem(product)">Buy Now</button>
   <button class="btn btn-primary" style="margin-left: 50%;" (click)="removeFromCart(product)">Remove From Cart</button>
+</div>
 </div>
 </div>

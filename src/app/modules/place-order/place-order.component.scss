@@ -1,0 +1,29 @@
+.padd {
+    margin: 5% 5% 1% 5%;
+    background-color: rgb(229, 245, 245);
+    padding: 30px 25px 25px 25px;
+    border-radius: 10px;
+  }
+  div {
+      padding: 5px;
+  }
+  .bod {
+    background-image: url('/assets/BG.jpg');
+      width: 100vw;
+      height: 92vh;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+  }
+  .btn {
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(54, 13, 119);
+  }
+  .placed {
+    color: rgb(16, 23, 122);
+    font-size: 30px;
+    font-family: "A";
+    margin-left: 40vw;
+    margin-top: 40vh;
+  }

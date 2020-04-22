@@ -1,0 +1,16 @@
+<div class="bod">
+    <div class="head">My Cart Orders !</div>
+    <div *ngFor="let order of orders" class="main">
+        <div class="media" style="padding: 75px;">
+            <img src="{{order.photoUrl}}" width="200" height="200" class="align-self-start mr-3" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">{{order.productName}}</h5>
+                <p>Model: {{order.productId}}</p>
+                <p>Launch Date: {{order.launchDate}}</p>
+                <p>Total Price: {{order.price}}</p>
+                <p>Description: {{order.description}}</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Proceed To Deliver</button>
+    </div>
+</div>
