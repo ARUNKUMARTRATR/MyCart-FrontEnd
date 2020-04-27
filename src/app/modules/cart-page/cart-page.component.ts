@@ -10,6 +10,9 @@ import { ApiService } from 'src/app/core';
 })
 export class CartPageComponent implements OnInit {
   cartData: Array<ProductModel>;
+
+  cartisempty: boolean;
+
   productCart: {
     UserId: number,
     CartProductId: string,
@@ -28,6 +31,11 @@ buyItem(product) {
     this.dataApiService.post('api/ProductCarts/remove', this.productCart, {}).subscribe(result => {
       const filtered = this.cartData.filter(data => data.productId !== item.productId);
       this.cartData = filtered;
+      if (this.cartData.length > 0) {
+        this.cartisempty = true;
+      } else {
+        this.cartisempty = false;
+      }
     });
 
   }
@@ -35,6 +43,11 @@ buyItem(product) {
     const uId = sessionStorage.getItem('userId');
     this.dataApiService.get('api/ProductCarts/' + uId, {}).subscribe(result => {
       this.cartData = result;
+      if (this.cartData.length > 0) {
+        this.cartisempty = true;
+      } else {
+        this.cartisempty = false;
+      }
       console.log(result);
     });
 

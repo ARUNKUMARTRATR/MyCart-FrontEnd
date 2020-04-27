@@ -1,4 +1,5 @@
-<div class="bod" style="margin-top: 5%;">
+<h3 *ngIf="!cartisempty">Your Cart Is Empty !</h3>
+<div *ngIf="cartisempty" style="margin-top: 5%;">
   <div *ngFor="let product of cartData" class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">

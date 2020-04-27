@@ -1,0 +1,21 @@
+.card {
+    cursor: pointer;
+    padding: 3%;
+    height: 450px;
+    max-width: 1200px;
+    margin: 3% 3% 0% 12%;
+    border-radius: 15px;
+  }
+  img {
+    width: 250px;
+    height: 300px;
+  }
+  button {
+    border: hidden;
+    width: 300px;
+    margin: 3% 0% 3% 3%;
+  }
+  .but {
+    margin-left: 33%;
+    display: flex;
+  }
