@@ -1,13 +1,14 @@
-<div class="flexbox">
+<div class="flexbox" style="background: rgb(12, 224, 231);">
   <div class="ldiv">
     <div class="sign">
       <span routerLink="/mycart/dashboard" style="cursor: pointer;"><span class="fast-flicker">M</span>Y<span
           class="veryfast">*</span>C<span class="flicker">A</span>R<span class="fast-flicker">T</span></span>
     </div>
   </div>
+
+  <button routerLink="/mycart/orders" class="btn bt" type="submit">My Cart Orders</button>
   <button class="btn bt" type="submit" (click)="addNew()">Add New Product</button>
-  <button class="btn bt cart" type="submit" *ngIf='!cartcountcheck' (click)="toCart()">Cart</button>
-  <button class="btn bt cart" type="submit" *ngIf='cartcountcheck' (click)="toCart()">Cart</button>
+  <button class="btn bt cart" type="submi" (click)="toCart()">Cart</button>
   <button dropdownToggle type="button" class="btn bt" (click)="showSpinner('log')">Logout</button>
 
 </div>

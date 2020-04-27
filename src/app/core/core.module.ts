@@ -9,7 +9,6 @@ import { ApiService, AuthService, ErrorsHandler} from './services';
 import { AuthGuard } from './guards';
 
 import { NotFoundModule, NetworkDetectionModule } from './components';
-import { MycartapiService } from './services/mycartapi.service';
 
 @NgModule({
   imports: [CommonModule, NetworkDetectionModule, NotFoundModule],
@@ -31,7 +30,6 @@ import { MycartapiService } from './services/mycartapi.service';
     },
     AuthService,
     ApiService,
-    MycartapiService,
     AuthGuard
   ],
   exports: [NetworkDetectionModule, NotFoundModule]

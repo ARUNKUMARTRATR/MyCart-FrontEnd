@@ -9,8 +9,7 @@ import { AuthService } from 'angularx-social-login';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  cartcountcheck = true;
-  cartCount: number;
+  fullName: string;
   constructor(private data: ApiService, private nav: Router, private authService: AuthService, public spinner: NgxSpinnerService ) {
 
   }
@@ -31,6 +30,6 @@ toCart() {
   this.nav.navigateByUrl('mycart/cart');
 }
 ngOnInit() {
-
+this.fullName = sessionStorage.getItem('fullName');
 }
 }

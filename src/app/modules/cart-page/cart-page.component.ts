@@ -25,7 +25,7 @@ buyItem(product) {
       UserId: +sessionStorage.getItem('userId'),
       CartProductId: item.productId
     };
-    this.dataApiService.post('api/ProductCarts', this.productCart, {}).subscribe(result => {
+    this.dataApiService.post('api/ProductCarts/remove', this.productCart, {}).subscribe(result => {
       const filtered = this.cartData.filter(data => data.productId !== item.productId);
       this.cartData = filtered;
     });

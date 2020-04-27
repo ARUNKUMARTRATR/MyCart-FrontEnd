@@ -1,21 +1,20 @@
-<div class="bod">
-<div class="main" *ngFor = 'let product of cartData'>
-  <h3>{{product.productName}}</h3>
-<div class="tex">
-  <p><b>Model:</b> {{product.productId}}</p>
-  <p><b>Launch Date:</b> {{product.launchDate}}</p><br>
-</div>
-  <div class="des">
-    <b>Description :</b><br><label><span>{{product.description}}</span></label>
+<div class="bod" style="margin-top: 5%;">
+  <div *ngFor="let product of cartData" class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{product.photoUrl}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.productName}}</h5>
+          <p class="card-text">Price: {{product.price}}</p>
+          <p class="card-text"><small class="text-muted">{{product.description}}</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="but">
+      <button style="background-color: yellowgreen;" class="btn btn-primary" (click)="buyItem(product)">buy Now</button>
+      <button class="btn btn-primary" (click)="removeFromCart(product)">Remove From Cart</button>
+    </div>
   </div>
-  <div style="display: flex;">
-    <img src="{{product.photoUrl}}" alt="cardimg"><br>
- 
-    <div class="vl"></div>
-  </div>
-  <div style="display: flex;margin-left: 50vw;">
-  <button class="btn btn-primary" (click)="buyItem(product)">Buy Now</button>
-  <button class="btn btn-primary" style="margin-left: 50%;" (click)="removeFromCart(product)">Remove From Cart</button>
-</div>
-</div>
 </div>

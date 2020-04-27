@@ -9,6 +9,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [ProductEditComponent],
-  imports: [CommonModule, ProductEditRoutingModule, ReactiveFormsModule, BsDatepickerModule.forRoot(),]
+  imports: [CommonModule, ProductEditRoutingModule, ReactiveFormsModule, BsDatepickerModule.forRoot()]
 })
 export class ProductEditModule { }

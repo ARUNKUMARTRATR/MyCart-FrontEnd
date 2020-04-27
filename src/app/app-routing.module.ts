@@ -36,6 +36,27 @@ const routes: Routes = [
             m => m.ProductEditModule
           )
       },
+      {
+        path: 'placeorder',
+        loadChildren: () =>
+          import('./modules/place-order/place-order.module').then(
+            m => m.PlaceOrderModule
+          )
+      },
+      {
+        path: 'orders',
+        loadChildren: () =>
+          import('./modules/orders/orders.module').then(
+            m => m.OrdersModule
+          )
+      },
+      {
+        path: 'productdetails',
+        loadChildren: () =>
+          import('./modules/product-details/product-details.module').then(
+            m => m.ProductDetailsModule
+          )
+      }
     ]
   },
   {

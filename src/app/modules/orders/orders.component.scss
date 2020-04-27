@@ -1,6 +1,5 @@
 .main {
     background-color: white;
-    margin: 3% 5% 1% 14%;
     border-radius: 10px;
     height: 400px;
     width: 70%;
@@ -8,21 +7,16 @@
     transition: 0.3s;
     cursor: pointer;
 }
-.bod {
-    background-image: url('/assets/gbg.jpg');
-    background-size: cover;
-    background-repeat: repeat;
-}
 //////////////////////////////////////////////////////////////////////////////////////////////////
 .head {
     font-family: "A";
     font-size: 50px;
     margin-left: 27vw;
     padding-top: 21px;
-    color: whitesmoke;
+    color: rgb(241, 211, 35);
 }
-button {
-    position: absolute;
-    margin-left: 55vw;
-    margin-top: -1vh;
-}
+.bod {
+    background-image: url('/assets/gbg.jpg');
+    min-height: 93vh;
+    width: 100%;
+  }

@@ -1,6 +1,7 @@
 <div class="bod">
     <div *ngIf="orderCheck" class="placed">Your Order Placed !</div>
     <div *ngIf="!orderCheck" class="padd">
+        <span class="heading">Enter Your Delivery Adress</span>
         <form [formGroup]="profileForm">
             <div class="form-row">
                 <div class="col">

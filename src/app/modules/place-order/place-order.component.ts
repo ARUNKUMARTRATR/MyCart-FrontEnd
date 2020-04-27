@@ -38,10 +38,12 @@ export class PlaceOrderComponent implements OnInit {
   constructor(private dataApiService: ApiService) { }
 placeOrder(data) {
   const productdata: ProductModel = JSON.parse (sessionStorage.getItem('product'));
+  const userIdValue = +sessionStorage.getItem('userId');
   const temp = this.profileForm.value;
+  sessionStorage.removeItem('product');
 
   this.userProfile = {
-    userId: +sessionStorage.getItem('userId'),
+    userId: userIdValue,
     productId: productdata.productId,
     TotalPrice: +productdata.price,
     FName: temp.FName,
@@ -55,10 +57,15 @@ placeOrder(data) {
     Terms: temp.Terms
   };
   console.log(this.userProfile);
-  this.dataApiService.post('api/ProductOrders', this.userProfile, {}).subscribe(result => {
-    console.log(result);
-    this.orderCheck = true;
-  });
+  this.dataApiService.post('api/ProductOrders', this.userProfile, {}).subscribe(result => {console.log(result); this.orderCheck = true; });
+
+  this.dataApiService.post('api/Email/' + userIdValue, productdata, {}).subscribe(res => alert('You Have New Email Notification!'));
+
+  const productCart = {
+    UserId: +sessionStorage.getItem('userId'),
+    CartProductId: productdata.productId
+  };
+  this.dataApiService.post('api/ProductCarts/remove', productCart, {}).subscribe();
 }
   ngOnInit() {
     this.orderCheck = false;

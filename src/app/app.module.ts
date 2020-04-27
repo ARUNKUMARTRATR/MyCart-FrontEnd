@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
 import { AppConfig, APP_CONFIG } from './config';
+import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 
 
 @NgModule({

@@ -7,7 +7,6 @@ $gradient-end: rgb(248, 4, 106);
 .flexbox {
   display: flex;
   height: 60px;
-  background-color: rgba(22, 168, 149, 0.582);
   flex-basis: 25%;
 }
 .ldiv {
@@ -67,7 +66,6 @@ button {
 
 .sign {
   outline-style: hidden;
-  border: hidden;
   margin-left: 100px;
   margin-top: 15px;
   display: flex;
